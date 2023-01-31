@@ -1,0 +1,577 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#alles {
+    width: 984px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px black solid;
+}
+
+#loggaHead {
+    width: 100%;
+    height: 90px;
+    background-image: linear-gradient(to right,  white 60%, #B7CED7 100%);
+    border-bottom: 1px solid #83B5C1;
+}
+
+#dropHead {
+    width: 100%;
+    height: 45px;
+    background-color: #2DACE3; 930
+}
+
+#content {
+    width: 100%;
+    height: 930px;
+}
+
+#bigFoot {
+    width: 100%;
+    border-top: 1px solid #DDDDDD;
+    background-color: #F3F3F3;
+}
+
+#datum {
+    width: 99%;
+    height: 30px;
+    background-color: #F0F3F7;
+    border-top: 2px solid #CCCCCC;
+    padding-left: 1%;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#datum p {
+    display: inline;
+    font-size: 0.7em;
+    margin-top: -10px;
+    color: black;
+}
+
+#logga {
+    float: left;
+    margin-top: -15px;
+}
+
+#loggheadtext {
+    float:left;
+    margin-top: 3.5%;
+}
+
+.dropDown {
+    float: left;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-top: 14px;
+    height: 31px;
+}
+
+.dropDown a, .info a {
+    font-size: 0.92em;
+}
+
+.dropDown a:hover {
+    text-decoration: none;
+}
+
+.dropDown:hover {
+    background-color: white;
+}
+
+#omEU, #politik, #law, #bo, #handlingar, #kontakt {
+    width: 984px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    display: none;
+    position: absolute;
+    border-bottom: 5px solid #2DACE3; 
+}
+
+#omEU {
+    height: 308px;
+}
+
+.dropDown:nth-child(2):hover #omEU{
+    display: block;
+    margin-top: 13px;
+}
+
+.dropDown:nth-child(2):hover #omEU .tredjedel {
+    display: block;
+}
+
+#politik {
+    height: 290px;
+}
+
+.dropDown:nth-child(3):hover #politik {
+    display: block;
+    margin-top: 13px;
+}
+
+#law {
+    height: 182px;
+}
+
+.dropDown:nth-child(4):hover #law{
+    display: block;
+    margin-top: 13px;
+}
+
+#bo {
+    height: 242px;
+}
+
+.dropDown:nth-child(5):hover #bo{
+    display: block;
+    margin-top: 13px;
+}
+
+#handlingar {
+    height: 182px;
+}
+
+.dropDown:nth-child(6):hover #handlingar {
+    display: block;
+    margin-top: 13px;
+}
+
+#kontakt {
+    height: 182px;
+}
+
+.dropDown:nth-child(7):hover #kontakt {
+    display: block;
+    margin-top: 13px;
+}
+
+.dropDown h3 {
+    font-size: 1.1em;
+    margin-left: 5px;
+    margin-top: 5px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.dropDown ul {
+    list-style: none;
+    margin-left: 5px;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.dropDown li {
+    margin-bottom: 6px;
+}
+
+.dropDown ul a, .info a, #bigFoot a, #instutitioner a {
+    color: #0000FF;
+}
+
+.dropDown ul a:hover, .info a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 1.85em;
+    margin-top: 30px;
+    margin-left: 25px;
+}
+
+#info {
+    height: 658px;
+    width: 100%;
+    float: left;
+}
+
+.watch {
+    width: 30%;
+    height: 200px;
+    border: 1px solid #E0E0E0;
+    float: left;
+    margin-left: 2.5%;
+    margin-top: 30px;
+}
+
+#content h2 {
+    font-size: 1.37em;
+    line-height: 1.3em;
+    color: rgb(53, 122, 153);
+    margin-bottom: 10px;
+    font-weight: 500;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-right: 30px;
+}
+
+h2 img {
+    margin-bottom: 2px;
+    margin-left: 10px;
+}
+
+.watch p {
+    font-size: 17px;
+    line-height: 27px;
+    color: black;
+    margin-left: 19px;
+    margin-right: 20px;
+}
+
+#watchimg {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+#sidebar {
+    width: 305px;
+    height: 550px;
+    float: right;
+    margin-top: 30px;
+    margin-left: 25px;
+    margin-right: 29px;
+}
+
+#sideStor, .sideLiten {
+    border: 1px solid #E0E0E0;
+    width: 100%;
+    background-color: white;
+}
+
+#sideStor {
+    height: 250px;
+}
+
+.sideLiten:nth-child(1) {
+    height: 110px;
+}
+
+.sideLiten:nth-child(2) {
+    height: 140px;
+}
+
+.sideLiten {
+    margin-top: 20px;
+}
+
+#EUnyhet {
+    background-color: #F2F2F2;
+    width: 100%;
+    height: 43px;
+    padding-top: 12px;
+}
+
+#EUnyhet h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 55px;
+    font-size: 1.5em;
+}
+
+#nyhet1 {
+    height: 195px;
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#nyhet1 h2 {
+    margin: 0px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    font-weight: 600;
+}
+
+.sideLiten img {
+    margin-left: 50px;
+}
+
+#synpunktFoot h3 {
+    color: rgb(53, 122, 153);
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+h3 img {
+    margin-left: 10px;
+}
+
+#vänster, #höger {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+#bigFoot h2, #instutitioner h2 {
+    font-weight: 100;
+    margin-left: 10px;
+    margin-top: 25px;
+    margin-bottom: 45px;
+}
+
+#instutitioner a{
+    font-size: 15px;
+}
+
+#vänster li img {
+    margin-left: 15px;
+}
+
+#höger li img {
+    margin-right: 10px;
+}
+
+.institut {
+    height: 60px;
+    width: 19%;
+    border-left: 2px solid #DDDDDD;
+    float: left;
+}
+
+.institut:nth-child(1) {
+    border: none;
+}
+
+#datum a, #datum p {
+    margin: 0px;
+    display: block;
+    float: left;
+    margin-top: 8px;
+}
+
+#datum p {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+input {
+    position: relative;
+    left: 550px;
+    bottom: 20px;
+    border: none;
+    width: 186px;
+    height: 26px;
+    background-image: url(s%C3%B6k1.gif);
+    z-index: 0;
+}
+
+#sök2 {
+    position: relative;
+    left: 820px;
+    bottom: 46px;
+    z-index: 0;
+}
+
+.språk {
+    float: right;
+    width: 130px;
+    font-size: 18px;
+    background-color: white;
+    border: 1px solid gray;
+    z-index: 1000;
+}
+
+.språk a {
+    padding-left: 5px;
+    width: 125px;
+    height: 17px;
+    padding-top: 3px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.språk a:hover {
+    background-color: #DDEEFF;
+    color: #003366;
+}
+
+.språkLista {
+    z-index: 1000;
+    display: none;
+}
+
+#sprak a{
+    z-index: 1000;
+}
+
+.show {
+    display: block;
+}
+
+@media screen and (max-width: 1300px) {
+    #alles {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #info {
+        width: 100%;
+    }
+    
+    .info {
+        width: 49%;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: none;
+    }
+    input, #sök2 {
+        z-index: -1;
+    }
+    
+    #sidebar {
+        width: 45%;
+    }
+    
+    #gråRuta {
+        width: 45%;
+    }
+    
+    #content {
+        height: 1300px;
+    }
+    
+    #vänster {
+        width: 100%;
+        text-align: center;
+        height: 280px;
+    }
+    
+    #höger {
+        width: 100%;
+        text-align: center;
+        height: 280px;
+    }
+    
+    #bigFoot {
+        height: 580px;
+    }
+}
+#innehåll {
+    margin-left: 175px;
+    margin-top: 20px;
+    padding-right: 50px;
+}
+
+#innehåll p, #innehåll a {
+    display: inline;
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+
+#innehåll a {
+    color: #347c98;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+#innehåll p {
+    margin-right: 5px;
+}
+
+#lattlast2 {
+    text-decoration: underline;
+    font-size: 100%;
+    display: block;
+    position: absolute;
+    top: 280px;
+    z-index: -1;
+}
+
+#innehåll h2 {
+    color: #333333;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 1.3em;
+    margin-left: 0px;
+    margin-top: 35px;
+    margin-bottom: 25px;
+}
+
+#content2 {
+    width: 100%;
+    height: auto;
+}
+
+#innehåll h3 {
+    color: #347c98;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+#innehåll div h3 {
+    color: black;
+    margin-top: 23px;
+    margin-left: 20px;
+    margin-bottom: 25px;
+}
+
+#innehåll div {
+    border: 1px solid #E5E4E2;
+    margin-bottom: 40px;
+}
+
+#innehåll div ul {
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+#innehåll div a {
+    text-decoration: underline;
+    font-size: 1rem;
+}
+
+#innehåll div li {
+    margin-bottom: 10px;
+}
+
+#innehåll h3:hover {
+    color: black;
+}
+
+.info h2 a {
+    color: rgb(53, 122, 153);
+}
+
+#content h2:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.andra a {
+    text-decoration: underline;
+    font-size: 1rem;
+}
+
+.andra p {
+    line-height: 1.6;
+}
+
+#politikomraden {
+    margin-left: 35px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+#politikomraden li {
+    margin-bottom: 15px;
+}
