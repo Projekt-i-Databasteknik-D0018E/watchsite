@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        
+        <title>Watchsite Admin tools</title>
+        <meta charset="utf-8">
+        <link rel = "stylesheet" href = "style.css">
+<!--        <script src="script.js"></script>-->
+        <meta name= "viewport" content = "width=device-width, initial-scale = 1.0">
+        
+    </head>
+    
+    <body>
+        <div id = "alles">
+            <div id = "loggaHead">
+                <div><img src="Logga.png" id="logga" width=100 height=135></div>
+                <div id = "loggheadtext"><h2>Watchsite - The site for watches</h2></div>
+            </div>
+            
+            <div id = "dropHead">
+                <div class = "dropDown">
+                    <a href="index.php">Watches</a>
+                </div>
+                <div class = "dropDown">
+                    <a href="login.html">Login/Sign up</a>
+                </div>
+                <div class = "dropDown">
+                    <a href="profile.html">My profile</a>
+                </div>
+                <div class = "dropDown">
+                    <a href="about.html">About Watchsite</a>
+                </div>
+                <div class = "dropDown">
+                    <a href="">Admin tools</a>
+                </div>
+                <div class = "dropDown">
+                    <a href="cart.html">Shopping cart</a>
+                </div>            
+            </div>
+            
+            <div id = "content">   
+                <div id = "watches">
+                    <h1>Add Admin</h1>
+                    <form action="/admin_signup_page.php" method = "post">
+                        <div class="container">
+
+                            <label for="AUsername"><b>Username</b></label>
+                            <input type="text" placeholder="Enter Admin Username" name="AUsername" required>
+
+                            <label for="APassword"><b>Password</b></label>
+                            <input type="text" placeholder="Enter Admin Password" name="APassword" required>
+
+                            <div class="clearfix">
+                                <button type="submit" class="signupbtn">Add</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <h1>Add Watch</h1>
+                    <form action="/add_watch_page.php" method = "post">
+                        <div class="container">
+
+                            <label for="ProductName"><b>Product Name</b></label>
+                            <input type="text" placeholder="Enter Product Name" name="ProductName" required>
+
+                            <label for="ProductDescription"><b>Product Description</b></label>
+                            <input type="text" placeholder="Enter Product Description" name="ProductDescription" required>
+                            
+                            <label for="Image"><b>Image</b></label>
+                            <input type="text" placeholder="Enter image link" name="Image" required>
+                            
+                            <label for="Price"><b>Price</b></label>
+                            <input type="text" placeholder="Enter Price" name="Price" required>
+                            
+                            <label for="Stock"><b>Stock</b></label>
+                            <input type="text" placeholder="Enter amount in stock" name="Stock" required>
+
+                            <div class="clearfix">
+                                <button type="submit" class="signupbtn">Add</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <h1>Change Watch Stock</h1>
+                    <form action="/stock_change_page.php" method = "post">
+                        <div class="container">
+
+                            <label for="ProductId"><b>Product Id</b></label>
+                            <input type="text" placeholder="Enter Product Id" name="ProductId" required>
+                            
+                            <label for="Stock"><b>Stock</b></label>
+                            <input type="text" placeholder="Enter amount in stock" name="Stock" required>
+
+                            <div class="clearfix">
+                                <button type="submit" class="signupbtn">Change</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <h1>Toggle Watch Visibility</h1>
+                    <form action="/toggle_visibility_page.php" method = "post">
+                        <div class="container">
+
+                            <label for="ProductId"><b>Product Id</b></label>
+                            <input type="text" placeholder="Enter Product Id" name="ProductId" required>
+
+                            <div class="clearfix">
+                                <button type="submit" class="signupbtn">Toggle</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        </div>
+        
+    </body>
+</html>

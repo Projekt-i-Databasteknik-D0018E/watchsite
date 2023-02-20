@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+        <head>
+        
+        <title>Watchsite Signup</title>
+        <meta charset="utf-8">
+        <link rel = "stylesheet" href = "style.css">
+<!--        <script src="script.js"></script>-->
+        <meta name= "viewport" content = "width=device-width, initial-scale = 1.0">
+        
+    </head>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 95%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  margin-top: 10px;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+</style>
+<body>
+    <div id = "alles">
+            <div id = "loggaHead">
+                <div><img src="Logga.png" id="logga" width=100 height=135></div>
+                <div id = "loggheadtext"><h2>Watchsite - The site for watches</h2></div>
+            </div>
+            
+            <div id = "dropHead">
+                <div class = "dropDown">
+                    <a href="index.php">Watches</a>
+                </div>
+                <div class = "dropDown">
+                    <a href="login.html">Login/Sign up</a>
+                </div>
+                <div class = "dropDown">
+                    <a href="profile.html">My profile</a>
+                </div>
+                <div class = "dropDown">
+                    <a href="about.html">About Watchsite</a>
+                </div>
+                <div class = "dropDown">
+                    <a href="admin_login.html">Admin tools</a>
+                </div>
+                <div class = "dropDown">
+                    <a href="cart.html">Shopping cart</a>
+                </div>            
+            </div>
+            
+            <div id = "content">
+               <h1>Sign up: Please choose username and password</h1>
+                <div id = "watches">
+                    <form action="/signup_page.php" method = "post" style="border:1px solid #ccc">
+                        <div class="container">
+
+                            <label for="username"><b>Username</b></label>
+                            <input type="text" placeholder="Enter username" name="username" required>
+                            
+                            <label for="email"><b>Email</b></label>
+                            <input type="text" placeholder="Enter email" name="email" required>
+
+                            <label for="psw"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
+
+                            <div class="clearfix">
+                                <button type="button" class="cancelbtn"><a href = "login.html" style="color: white">Cancel</a></button>
+                                <button type="submit" name="subbttn" class="signupbtn">Sign Up</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div id = "bigFoot">
+                All complaints about this site will remain unadressed
+            </div>
+            
+            <div id = "datum">
+                    <p>Last published 31/1 2023 | A site made for a course in databases (D0018E) by Amanda Lorné, Helge Lindgren and Axel Johansson, Luleå University of Technology</p>
+            
+            </div>
+        </div>
+
+
+
+</body>
+</html>
