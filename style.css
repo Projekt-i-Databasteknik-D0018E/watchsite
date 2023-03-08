@@ -21,7 +21,7 @@
 #dropHead {
     width: 100%;
     height: 45px;
-    background-color: #2DACE3; 930
+    background-color: #2DACE3;
 }
 
 #content {
@@ -161,6 +161,8 @@ h2 img {
 .watchimg {
     max-width: 100%;
     max-height: 200px;
+    min-height: 200px;
+    
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -227,12 +229,61 @@ h3 img {
     margin-right: 35%;
     margin-top: 10px;
     margin-bottom: 10px;
-    height: 45px;
-    background-color: #2DACE3; 930;
+    height: 50px;
+    background-color: #2DACE3;
     border-top: 1px solid #83B5C1;
 
 }
 
+#cartBuyDiv {
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 80px;
+    background-color: #2DACE3;
+    border-top: 1px solid #83B5C1;
+}
+
+#cartDiv {
+    width: 100%;
+    display:block;
+    float: left;
+}
+#cartDiv h1 {
+    margin-left: 40%;
+    font-size:large;
+    font-weight: bold;
+}
+
 #buyCentering {
     margin-left: 16%;
+}
+
+#comments {
+    border: 1px solid gray;
+}
+
+#comments h2 {
+    color: black;
+    margin-left: 15px;
+}
+
+.comment {
+    padding-left: 30px;
+    border-top: 1px dotted gray;
+}
+
+.comment h3 {
+    font-size: 14px;
+}
+
+.comment p {
+    margin-left: 5px;
+}
+
+#comments h2:hover {
+    text-decoration: none;
+    cursor:default;
 }

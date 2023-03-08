@@ -1,10 +1,12 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        
+        <?php session_start(); ?>
+        <?php include("configuration.php"); ?>
         <title>Watchsite, the best watch-buying site</title>
         <meta charset="utf-8">
         <link rel = "stylesheet" href = "style.css">
+        <link rel="SHORTCUT ICON" href="favicon.ico" type="image/ico" />
 <!--        <script src="script.js"></script>-->
         <meta name= "viewport" content = "width=device-width, initial-scale = 1.0">
         
@@ -25,81 +27,66 @@
                     <a href="login.html">Login/Sign up</a>
                 </div>
                 <div class = "dropDown">
-                    <a href="profile.html">My profile</a>
+                    <a href="profile.php">My profile</a>
                 </div>
                 <div class = "dropDown">
                     <a href="about.html">About Watchsite</a>
                 </div>
                 <div class = "dropDown">
-                    <a href="admin_login.html">Admin tools</a>
+                    <?php
+                    if($_SESSION['Privilege'] == "Admin"){
+                    ?>
+                        <a href="admin.html">Admin tools</a>
+
+                    <?php
+                    } else {
+                    ?>
+                        <a href="admin_login.html">Admin login</a>
+                    <?php                       
+                    }
+                    ?>
                 </div>
                 <div class = "dropDown">
-                    <a href="cart.html">Shopping cart</a>
+                    <a href="cart.php">Shopping cart</a>
                 </div>            
             </div>
             
             <div id = "content">
                <h1>Buy one of our many watches now and "watch" out for our next sale!</h1>
                 <div id ="watches">
-                    <div class = "watch">
-                        <h2><a href="product.html">Watch</a></h2>
-                        <img src="defaultWatch.jpg" class = "watchimg">
-                    </div>
-                    <div class = "watch">
-                        <h2><a href="product.html">Watch</a></h2>
-                        <img src="defaultWatch.jpg" class = "watchimg">
-                    </div>
-                    <div class = "watch">
-                        <h2><a href="product.html">Watch</a></h2>
-                        <img src="defaultWatch.jpg" class = "watchimg">
-                    </div>
-                    <div class = "watch">
-                        <h2><a href="product.html">Watch</a></h2>
-                        <img src="defaultWatch.jpg" class = "watchimg">
-                    </div>
-                    <div class = "watch">
-                        <h2><a href="product.html">Watch</a></h2>
-                        <img src="defaultWatch.jpg" class = "watchimg">
-                    </div>
-                    <div class = "watch">
-                        <h2><a href="product.html">Watch</a></h2>
-                        <img src="defaultWatch.jpg" class = "watchimg">
-                    </div>
-                    <div class = "watch">
-                        <h2><a href="product.html">Watch</a></h2>
-                        <img src="defaultWatch.jpg" class = "watchimg">
-                    </div>
-                    <div class = "watch">
-                        <h2><a href="product.html">Watch</a></h2>
-                        <img src="defaultWatch.jpg" class = "watchimg">
-                    </div>
-                    <div class = "watch">
-                        <h2><a href="product.html">Watch</a></h2>
-                        <img src="defaultWatch.jpg" class = "watchimg">
-                    </div>
                     <?php 
                         $sql = "SELECT COUNT(*) FROM Products";
-                        $item = mysqli_query($connection, $sql);
+
+                        $result = mysqli_query($connection, "SELECT * FROM Products");
+                        $item = mysqli_num_rows($result);
+
                     //  $item = mysqli_fetch_row($result)[0];
-                        $sql_message = "SELECT ProductName FROM Products WHERE ProductId= $item";
-                        $sql_imglink = "SELECT Image FROM Products WHERE ProductId = $item";
-                        $sql_imgalt = "SELECT ProductDescription FROM Products WHERE ProductId = $item";
-                        $sql_visible = "SELECT IsVisible FROM Products  WHERE ProductId = $item";
-                        while ($item >= 0){
-                            $data  = [
-                                "message"=> mysqli_query($connection, $sql_message),
-                                "imglink"=> mysqli_query($connection, $sql_imglink),
-                                "imgalt"=> mysqli_query($connection, $sql_imgalt)];
-                            $visible = mysqli_query($connection, $sql_visible);
-                            if($visible == 1){?>
-                                <div class = "watch"> 
-                                    <h2><a href=""><?php echo $data["message"];?></h2>
-                                    <img src="<?php echo $data["imglink"]?>" alt="<?php echo $data["imgalt"]?>">
+                        while($item > 0){
+                            $sql_message = "SELECT ProductName, Image, ProductDescription, IsVisible FROM Products WHERE ProductId= ?";
+                            $stmt = $connection->prepare($sql_message);
+                            $stmt->bind_param("i", $item);
+                            $stmt->execute();
+                            $stmt->store_result();
+                            $stmt->bind_result($message, $imglink, $imgalt, $visible);
+                            $stmt->fetch();
+
+                          //$data  = [
+                          //    "message"=> $message,
+                          //    "imglink"=> $img_link,
+                          //    "imgalt"=> $imgalt];
+                            if($visible){?>
+                                <?PHP
+                                $hreflink = "product.php?ProductId=".$item;
+                                ?>
+                                <div class = "watch">
+                                    <h2><a href=<?php printf($hreflink);?>><?php echo $message;?></a></h2>
+                                    <img src="<?php printf("%s", $imglink);?>" alt="<?php echo $imgalt;?>" class="watchimg">
                                 </div>
                             <?php
                             }
-                        $item = $item - 1;
+                            $item = $item-1;
                         }?>
+                    
                 </div>
             </div>
             
@@ -108,7 +95,7 @@
             </div>
             
             <div id = "datum">
-                    <p>Last published 31/1 2023 | A site made for a course in databases (D0018E) by Amanda Lorné, Helge Lindgren and Axel Johansson, Luleå University of Technology</p>
+                    <p>Last published 8/3 2023 | A site made for a course in databases (D0018E) by Amanda Lorné, Helge Lindgren and Axel Johansson, Luleå University of Technology</p>
             
             </div>
         </div>

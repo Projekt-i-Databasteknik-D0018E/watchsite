@@ -46,6 +46,22 @@
                         <img src="defaultWatch.jpg" class = "watchimg">
                     </div>
                 </div>
+                <h1>Purchase items in cart:</h1>
+                <div id = "buyDiv">
+                    <form action="/purchase.php" method = "post">
+                        <div class="container">
+
+                            <label for="DeliveryAdress"><b>Adress:</b></label>
+                            <input type="text" placeholder="Enter adress" name="DeliveryAdress" required>
+                            <label for="DeliveryName"><b><br>Name:</b></label>
+                            <input type="text" placeholder="Enter name" name="DeliveryName" required>
+
+                            <div class="clearfix">
+                                <button type="submit" class="signupbtn" name="subbttn" style="margin-left: 95px;">Add to cart</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
             
             <div id = "bigFoot">

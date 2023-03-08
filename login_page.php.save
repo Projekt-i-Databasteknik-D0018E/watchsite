@@ -1,0 +1,29 @@
+<?php
+/session_start();
+include 'configuration.php';
+if(isset($_POST['subbtn']){
+	$username = $_POST['username'];
+	$password = $_POST['psw'];
+	$loginq = $connection->prepare("SELECT * FROM Customers WHERE CUsername=? AND CPassword=?");
+	$loginq->bind_param('ss' $username, $password);
+	$loginq->execute();
+	$loginq->store_results();
+	$res = loginq->num_rows();
+	if ($res <1){
+		echo "incorrect";
+		//?>
+		//<script type="text/javascript">
+		//alert("Username does not exist or password is incorrect, please try again.");
+		//document.location.href = "login.html";
+		//</script>
+		//<?php
+	} else { 
+		echo "correct";
+		//?>
+		//<script type="text/javascript">
+		//alert("Username and password match, login tokens soontm");
+		//document.location.href = "index.php";
+		//</script>
+		//<?php
+	}
+}

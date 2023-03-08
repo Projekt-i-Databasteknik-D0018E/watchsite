@@ -1,7 +1,10 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        
+        <?PHP
+        SESSION_START();
+        include 'configuration.php';
+        ?>
         <title>Watchsite Profile</title>
         <meta charset="utf-8">
         <link rel = "stylesheet" href = "style.css">
@@ -37,14 +40,24 @@
                     <a href="cart.php">Shopping cart</a>
                 </div>            
             </div>
-            
+            <?PHP
+            $UID = $_SESSION['UID'];
+            $profQ = $connection->prepare("SELECT * FROM Customers WHERE CustomerId=?");
+	        $profQ->bind_param("i", $UID);
+	        $profQ->execute();
+            $profQ->store_result();
+            $profQ->bind_result($id, $fn, $ln, $un, $pw, $em);
+            $profQ->fetch();
+            if ($fn == NULL){$fn = "NOT SET";}
+            if ($ln == NULL){$ln = "NOT SET";}
+            ?>
             <div id = "content">
                 <h1>Name:</h1>
-                <p style="margin-left: 25px; margin-top: 10px; margin-bottom: 20px;">Customers.CFirstName Customers.CLastName</p>
+                <p style="margin-left: 25px; margin-top: 10px; margin-bottom: 20px;"><?PHP echo "First name: ".$fn.", last name: ".$ln; ?></p>
                 <h1>Username:</h1>
-                <p style="margin-left: 25px; margin-top: 10px; margin-bottom: 20px;">Customers.CUsername</p>
+                <p style="margin-left: 25px; margin-top: 10px; margin-bottom: 20px;"><?PHP echo "Username: ".$un?></p>
                 <h1>Email:</h1>
-                <p style="margin-left: 25px; margin-top: 10px; margin-bottom: 20px;">Customers.CEmail</p>
+                <p style="margin-left: 25px; margin-top: 10px; margin-bottom: 20px;"><?PHP echo "Email: ".$em?></p>
                 <div id = "watches">
                     <h1 style="margin-top: 80px;">Change Name:</h1>
                     <form action="/name_page.php" method = "post">
@@ -54,7 +67,7 @@
                             <input type="text" placeholder="Enter First Name" name="CFirstName" required>
 
                             <label for="CLastName"><b>Last Name</b></label>
-                            <input type="text" placeholder="Enter Last Name" name="CLastName" required style="display: block; float:left;">
+                            <input type="text" placeholder="Enter Last Name" name="CLastName" required style="display: block float:left;">
 
                             <div class="clearfix" style="margin-left: 0px; display: block; float:right; margin-bottom: 100px;">
                                 <button type="submit" class="signupbtn" name="subbttn" style="margin-right: 390px; display: block; float:left;">Change</button>
