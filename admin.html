@@ -35,7 +35,10 @@
                 </div>
                 <div class = "dropDown">
                     <a href="cart.php">Shopping cart</a>
-                </div>            
+                </div>
+                <div class = "dropDown">
+                    <a href="orderlist.php">Previous Orders</a>
+                </div>              
             </div>
             
             <div id = "content">   
@@ -96,7 +99,21 @@
                             </div>
                         </div>
                     </form>
-                    
+                    <h1>Change Price of Watch</h1>
+                    <form action="/price_change_page.php" method = "post">
+                        <div class="container">
+
+                            <label for="ProductId"><b>Product Id</b></label>
+                            <input type="text" placeholder="Enter Product Id" name="ProductId" required>
+                            
+                            <label for="Stock"><b>New Price</b></label>
+                            <input type="text" placeholder="Enter new price" name="NewPrice" required>
+
+                            <div class="clearfix">
+                                <button type="submit" name="subbttn" class="signupbtn">Toggle</button>
+                            </div>
+                        </div>
+                    </form>
                     <h1>Toggle Watch Visibility</h1>
                     <form action="/toggle_visibility_page.php" method = "post">
                         <div class="container">
